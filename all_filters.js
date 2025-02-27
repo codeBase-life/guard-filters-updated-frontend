@@ -1,5 +1,5 @@
 function fetchAndDisplayProducts(query = "") {
-  fetch(`/api/products${query}`)
+  fetch(`http://localhost:3000/api/products${query}`)
     .then((data) => data.json())
     .then((products) => {
       const products_section = document.getElementById(
@@ -44,7 +44,9 @@ fetchAndDisplayProducts();
 
 async function fetchFilterValues() {
   try {
-    const response = await fetch("/api/products/filter_values");
+    const response = await fetch(
+      "http://localhost:3000/api/products/filter_values"
+    );
     const filterValues = await response.json();
     return filterValues;
   } catch (error) {
