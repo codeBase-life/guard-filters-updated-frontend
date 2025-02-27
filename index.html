@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- splide  -->
+    <link href="
+        https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+        " rel="stylesheet">
+
+    <link rel="stylesheet" href="/frontend/index.css">
+    <title>Document</title>
+
+
+</head>
+
+<body style="background-color: #f3f3f3;">
+    <header>
+        <section class="navBar">
+            <nav class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img class="logo img-fluid" src="/frontend/assets/logo.png" alt="Logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-3">
+                            <li class="nav-item">
+                                <a class="nav-link active home-link" aria-current="page"
+                                    href="/frontend/index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle company-link" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Company
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#clients1">Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#AboutUs">About us</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#Brands">Brands</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#Testimonials">Testimonials</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle products-link" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Products
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/frontend/All_filters.html">Allied Filters</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/frontend/All_filters.html">Super GAC Filters</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item contact">
+                                <a class="nav-link" href="/frontend/contact.html">Contact us</a>
+                            </li>
+
+                        </ul>
+                        <!-- visible on <=576px  -->
+                        <div class="d-xs-block d-sm-none d-md-none d-lg-none d-xl-none">
+                            <div class="ms-auto bg-white rounded-pill px-3 d-flex ">
+                                <input type="text" placeholder="Search product" class="search-input flex-grow-1">
+                                <button type="button" class="search-icon-btn ms-auto">
+                                    <i class="bi bi-search search-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- visible on >= 576px -->
+                        <div class=" d-none d-sm-block d-md-block d-lg-block d-xl-block ms-auto">
+                            <div class="ms-auto bg-white rounded-pill px-3 d-flex align align-items-center">
+                                <div class="filter-box px-3 py-1 bg-light rounded-pill">
+
+                                    <select name="" id="filterSelect" class="filter-button">
+                                        <option value="" selected class="fw-light">All Filter</option>
+                                        <option value=" value1">val1</option>
+                                        <option value="value2">val2</option>
+                                        <option value="value3">val3</option>
+                                    </select>
+                                </div>
+                                <input type="text" placeholder="Search product" class="search-input flex-grow-1">
+                                <button type="button" class="search-icon-btn ms-auto">
+                                    <i class="bi bi-search search-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <main class="mb-5">
+        <section class="carousel-area mb-5">
+
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active circle-btn" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        class="circle-btn" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        class="circle-btn" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active ">
+                        <div class="row h-100 container custom-container">
+                            <div class=" col-12 col-md-6 d-flex align-items-center">
+                                <ul class="list-unstyled d-flex flex-column gap-3 py-5">
+                                    <li>
+                                        <p class="fs-3 text-center text-md-start">Advanced Ailter Filters</p>
+                                    </li>
+                                    <li>
+                                        <h1 class="text-center text-md-start ">
+                                            Allied Air Filters:
+                                            <br>
+                                            Breathe Easy
+                                        </h1>
+                                    </li>
+                                    <li>
+                                        <p class="fs-6 text-center text-md-start">Allied Air Filters ensure your engine
+                                            receives clean,
+                                            debris-free air. Made
+                                            from high-quality materials, they enhance performance, extend engine life,
+                                            and improve fuel efficiency. Trust Allied for superior filtration and
+                                            durability.</p>
+                                    </li>
+                                    <ul class="list-unstyled d-flex flex-column flex-md-row align-items-center gap-3">
+                                        <li class="order-1 order-md-0">
+                                            <button type="button" class="btn btn-light text-primary ">Browse
+                                                Filters</button>
+                                        </li>
+                                        <li class=" order-0 order-md-1">
+                                            <p class="fs-6 ">"Visit our store today to learn more about filters"</p>
+                                        </li>
+
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex align-items-end">
+                                <img class="img-fluid" src="/frontend/assets/slider-filter.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row h-100 container custom-container ">
+                            <div class=" col-12 col-md-6 d-flex align-items-center">
+                                <ul class="list-unstyled d-flex flex-column gap-3 py-5">
+                                    <li>
+                                        <p class="fs-3 text-center text-md-start">Advanced Ailter Filters</p>
+                                    </li>
+                                    <li>
+                                        <h1 class="text-center text-md-start ">
+                                            Allied Air Filters:
+                                            <br>
+                                            Breathe Easy
+                                        </h1>
+                                    </li>
+                                    <li>
+                                        <p class="fs-6 text-center text-md-start">Allied Air Filters ensure your engine
+                                            receives clean,
+                                            debris-free air. Made
+                                            from high-quality materials, they enhance performance, extend engine life,
+                                            and improve fuel efficiency. Trust Allied for superior filtration and
+                                            durability.</p>
+                                    </li>
+                                    <ul class="list-unstyled d-flex flex-column flex-md-row align-items-center gap-3">
+                                        <li class="order-1 order-md-0">
+                                            <button type="button" class="btn btn-light text-primary ">Browse
+                                                Filters</button>
+                                        </li>
+                                        <li class=" order-0 order-md-1">
+                                            <p class="fs-6 ">"Visit our store today to learn more about filters"</p>
+                                        </li>
+
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex align-items-end">
+                                <img class="img-fluid" src="/frontend/assets/slider-filter.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row h-100 container custom-container">
+                            <div class=" col-12 col-md-6 d-flex align-items-center">
+                                <ul class="list-unstyled d-flex flex-column gap-3 py-5">
+                                    <li>
+                                        <p class="fs-3 text-center text-md-start">Advanced Ailter Filters</p>
+                                    </li>
+                                    <li>
+                                        <h1 class="text-center text-md-start ">
+                                            Allied Air Filters:
+                                            <br>Breathe Easy
+                                        </h1>
+                                    </li>
+                                    <li>
+                                        <p class="fs-6 text-center text-md-start">Allied Air Filters ensure your engine
+                                            receives clean,
+                                            debris-free air. Made
+                                            from high-quality materials, they enhance performance, extend engine life,
+                                            and improve fuel efficiency. Trust Allied for superior filtration and
+                                            durability.</p>
+                                    </li>
+                                    <ul class="list-unstyled d-flex flex-column flex-md-row align-items-center gap-3">
+                                        <li class="order-1 order-md-0">
+                                            <button type="button" class="btn btn-light text-primary ">Browse
+                                                Filters</button>
+                                        </li>
+                                        <li class=" order-0 order-md-1">
+                                            <p class="fs-6 ">"Visit our store today to learn more about filters"</p>
+                                        </li>
+
+                                    </ul>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex align-items-end">
+                                <img class="img-fluid" src="/frontend/assets/slider-filter.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        br
+        <section class="clients my-5" id="clients1">
+
+
+            <div class="container">
+                <div class="row ">
+                    <div class="col-12 col-md-6 order-1 order-md-0">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="img-fluid" src="/frontend/assets/Toyota.png" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="/frontend/assets/Suzuki.png" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="/frontend/assets/Nissan.png" alt="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="img-fluid" src="/frontend/assets/Honda.png" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="/frontend/assets/AGTL.png" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid" src="/frontend/assets/MTL.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 order-0 order-md-1 d-flex align-items-center">
+                        <ul class="list-unstyled  d-flex gap-4 flex-column ">
+                            <li>
+                                <h2 class="fs-1 client">our clients</h2>
+                            </li>
+                            <li>
+                                <p class="fs-5 text-black">Trusted by Leading Businesses and Professionals</p>
+                            </li>
+                            <li>
+                                <p class="text-body-secondary">Our clients include a wide range of businesses and
+                                    professionals who trust our
+                                    filters for their vehicles. With a history of dedicated service and proven
+                                    performance, we ensure unmatched protection and efficiency for their engines.</p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <br>
+
+        <!-- about us section -->
+        <!-- only visible on lg and > devices  -->
+        <section class="about-us my-5 d-none d-lg-block d-xl-block" id="AboutUs">
+
+            <div class="container">
+                <h2 class=" text-center " id="about-us"> about us</h2>
+                <p class="text-black text-center mt-3">Our Commitment to Quality and innovation</p>
+
+                <div class=" about-us-data p-5 rounded position-relative mt-5 ">
+                    <div class="row">
+                        <div class="col-6 d-flex flex-column gap-3">
+                            <p class="about-us-para1 text-body-secondary"><b class="text-black">Introduction:</b> At
+                                Allied Filters, we are
+                                dedicated to
+                                providing top-quality filters
+                                for a wide range of vehicles and industrial applications. Our journey began with a
+                                simple mission: to deliver exceptional filtration solutions that enhance engine
+                                performance and longevity.</p>
+                            <p class="about-us-para2 text-body-secondary rounded ms-auto"><b class="text-black">Our
+                                    Mission:</b> Our
+                                mission is to deliver superior filtration
+                                products that protect
+                                and enhance engine performance. We strive to achieve this through continuous
+                                innovation,
+                                stringent quality control, and a customer-centric approach.</p>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            <p class="fs-6 about-us-para3 rounded py-3 px-5 bg-light text-body-secondary"><b
+                                    class="text-black">Our History: </b>Founded in
+                                2024, our company has
+                                grown
+                                from a small
+                                startup to a
+                                trusted name in the filtration industry. Our founder, [Founder's Name], recognized
+                                the
+                                need for reliable filters that could withstand the toughest conditions. With a
+                                passion
+                                for innovation and a commitment to quality, [Founder's Name] built a company that
+                                prioritizes customer satisfaction above all.</p>
+                        </div>
+                    </div>
+                    <div class="about-us-two-points position-absolute ">
+                        <div class="d-flex gap-5">
+                            <div class=" text-black rounded py-1 px-3 bg-light about-us-box1">
+
+                                <ul class="list-unstyled d-flex gap-3 align-items-center">
+                                    <li><img class="img-fluid " src="/frontend/assets/mountain.png" alt="">
+                                    </li>
+                                    <ul class="list-unstyled">
+
+                                        <li>
+                                            <b class="about-us-10k fs-4">10K+</b>
+                                        </li>
+                                        <li>
+                                            <p class="text-black">Satisfied Customers</p>
+                                        </li>
+                                    </ul>
+                                </ul>
+
+                            </div>
+                            <div class=" text-black rounded py-1 px-3 bg-light about-us-box2">
+                                <ul class="list-unstyled d-flex gap-3 align-items-center">
+                                    <li>
+                                        <img class="img-fluid" src="/frontend/assets/diamond.png" alt="">
+                                    </li>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <b class="fs-4 about-us-10k">2K+</b>
+                                        </li>
+                                        <li>
+                                            <p class="text-black"> Quality Products</p>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- display on sm and md devices -->
+        <section class="about-us my-5  d-block d-sm-block d-md-block d-lg-none" id="AboutUs">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 d-flex flex-column justify-content-center">
+                        <h2 class=" text-center " id="about-us"> about us</h2>
+                        <p class="text-black text-center mt-3">Our Commitment to Quality and innovation</p>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-us-data rounded d-flex flex-column pb-5 position-relative">
+                            <div class="bg-white rounded py-1 px-2 m-3">
+                                <p class=" about-us-sm text-body-secondary"><b class="text-black">Introduction:</b> At
+                                    Allied
+                                    Filters, we are
+                                    dedicated to
+                                    providing top-quality filters for a wide range of vehicles and industrial
+                                    applications. Our journey began with a simple mission: to deliver exceptional
+                                    filtration solutions that enhance engine performance and longevity.</p>
+                            </div>
+                            <div class="bg-white rounded py-1 px-2 m-3">
+                                <p class="text-body-secondary about-us-sm"><b class="text-black">Our Mission:</b> Our
+                                    mission is to deliver superior filtration products that protect and enhance engine
+                                    performance. We strive to achieve this through continuous innovation, stringent
+                                    quality control, and a customer-centric approach.</p>
+                            </div>
+                            <div class="bg-white rounded py-1 px-2 m-3">
+                                <p class="text-body-secondary about-us-sm"><b class="text-black">Our History:</b>
+                                    Founded in 2024, our company has grown from a small startup to a trusted name in the
+                                    filtration industry. Our founder, [Founder's Name], recognized the need for reliable
+                                    filters that could withstand the toughest conditions. With a passion for innovation
+                                    and a commitment to quality, [Founder's Name] built a company that prioritizes
+                                    customer satisfaction above all.</p>
+                            </div>
+                            <!-- <div class="about-us-sm-two-points position-absolute ">
+                                <div class="d-flex gap-3">
+                                    <div class=" text-black rounded px-2 py-1  bg-light about-us-sm-box1">
+
+                                        <ul class="list-unstyled d-flex gap-3 align-items-center">
+                                            <li><img class="img-fluid about-us-sm-img1"
+                                                    src="/frontend/assets/mountain.png" alt="">
+                                            </li>
+                                            <ul class="list-unstyled">
+
+                                                <li>
+                                                    <b class="about-us-10k fs-6">10K+</b>
+                                                </li>
+                                                <li>
+                                                    <p class="text-black about-us-sm-text1">Satisfied Customers</p>
+                                                </li>
+                                            </ul>
+                                        </ul>
+
+                                    </div>
+                                    <div class=" text-black rounded  bg-light about-us-sm-box2 px-2 py-1">
+                                        <ul class="list-unstyled d-flex gap-3 align-items-center">
+                                            <li>
+                                                <img class="img-fluid about-us-sm-img2"
+                                                    src="/frontend/assets/diamond.png" alt="">
+                                            </li>
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <b class=" about-us-10k">2K+</b>
+                                                </li>
+                                                <li>
+                                                    <p class="text-black about-us-sm-text2"> Quality Products</p>
+                                                </li>
+                                            </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <br>
+        <br>
+        <!-- trusted brands -->
+        <section class="trusted-brands my-0 my-md-5" id="Brands">
+            <div class="container">
+                <h2 class="brands-heading text-center">trusted brands we partner with</h2>
+                <p class="text-black text-center">Quality and Reliability from Industry Leaders</p>
+            </div>
+            <div class="container mt-4">
+                <div class="d-flex flex-xl-row flex-column gap-2">
+                    <div class=" brands-inner-box1 px-2 py-3 rounded">
+                        <div class="row ">
+                            <div class="col-6 d-flex align-items-center">
+                                <div>
+
+                                    <img class="img-fluid p-4 bg-white rounded" src="/frontend/assets/allied-filter.png"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex flex-column gap-3 justify-content-center">
+                                <h3>Allied Filters</h3>
+                                <p>Renowned for their advanced filtration technology and durability</p>
+                                <button type="button" class="btn btn-light bg-white">
+                                    <span class="brandes-inner-btn-txt1">Browse Filters</span>
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" brands-inner-box2 px-2 py-3 rounded">
+                        <div class="row ">
+                            <div class="col-6 d-flex align-items-center">
+                                <div>
+
+                                    <img class="img-fluid p-4 bg-white rounded" src="/frontend/assets/super-gac.png"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex flex-column gap-3 justify-content-center">
+                                <h3>Super GAC Filters</h3>
+                                <p>Trusted for their exceptional performance and efficiency</p>
+                                <button type="button" class="btn btn-light bg-white">
+                                    <span class="brandes-inner-btn-txt2">
+                                        Browse
+                                        Filters
+                                    </span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <!-- why choose us  -->
+        <section class="choose-us my-5" style="overflow: hidden;">
+            <div class="">
+                <div class="row ">
+                    <div class="col-12 col-md-6 d-flex flex-column gap-3 order-1 order-md-0">
+
+                        <div class="col-12">
+                            <ul
+                                class="list-unstyled choose-us-list1 rounded-pill py-2 ps-2 d-flex gap-4 align-items-center">
+                                <li><img class="img-fluid" src="/frontend/assets/guarantee.png" alt=""></li>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <p class="fs-5 fw-semibold">Durability & Efficiency</p>
+                                    </li>
+                                    <li class="">
+                                        <p class="">Our filters are made from high-quality materials, ensuring
+                                            long-lasting performance & efficiency.</p>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="col-12 ms-0 ms-md-5">
+                            <ul
+                                class="list-unstyled choose-us-list2 rounded-pill py-2 px-3 d-flex gap-4 align-items-center">
+                                <ul class="list-unstyled text-end px-2">
+                                    <li>
+                                        <p class=" fs-5 fw-semibold">compatibility</p>
+                                    </li>
+                                    <li>
+                                        <p>Designed to fit a wide range of vehicle models and industrial applications.
+                                        </p>
+                                    </li>
+                                </ul>
+                                <li><img class="img-fluid" src="/frontend/assets/compatible.png" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <ul
+                                class="list-unstyled choose-us-list1 rounded-pill py-2 ps-2 d-flex gap-4 align-items-center">
+                                <li>
+                                    <img class="img-fluid" src="/frontend/assets/trusted.png" alt="">
+                                </li>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <p class="fs-5 fw-semibold">Reliability & Trust</p>
+                                    </li>
+                                    <li>
+                                        <p>Trusted by professionals for consistent, reliable filtration in various
+                                            conditions.</p>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-6 order-0 order-md-1 mb-4 md-md-0 px-0 px-md-5">
+                        <ul class="list-unstyled text-center text-md-start">
+                            <li>
+                                <h2 class="choose-us-title fs-1">why choose us</h2>
+                            </li>
+                            <li class="my-4">
+                                <p class="text-black">The Advantages of Our Filters</p>
+                            </li>
+                            <li>
+                                <p class="text-body-secondary">At Allied Filters, we take pride in providing top-quality
+                                    filters known for their
+                                    exceptional performance and reliability. Our filters are crafted from high-quality
+                                    materials to ensure durability and long-lasting use. </p>
+                            </li>
+                            <li class="mt-5">
+                                <p class="text-body-secondary">Designed to fit a wide range of vehicle models and
+                                    industrial applications, our
+                                    filters offer advanced filtration technology to maximize engine performance and fuel
+                                    efficiency. Our filters provide unmatched protection and optimal performance for
+                                    your vehicle's engine. </p>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- products -->
+
+        <section class="products mt-5">
+            <div class="container">
+                <ul class="list-unstyled text-center">
+                    <li>
+                        <h2 class="fs-1 products-main-title">explore our product categories </h2>
+                    </li>
+                    <li class="my-4">
+                        <p class="text-black">Find the Perfect Filter for Every Need</p>
+                    </li>
+                    <li>
+                        <ul class="list-unstyled d-flex justify-content-center gap-3">
+                            <li>
+                                <p class="products-allied-option fw-semibold">Allied Filters</p>
+                            </li>
+                            <li>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch"
+                                        id="flexSwitchCheckDefault">
+
+                                </div>
+                            </li>
+                            <li>
+                                <p class="text-black fw-semibold">Super GAC</p>
+                            </li>
+                        </ul>
+
+
+
+
+
+
+                    </li>
+                    <li class="my-5">
+                        <ul class="list-unstyled d-flex justify-content-center flex-column  flex-md-row ">
+                            <li>
+                                <div class="dropdown bg-light bg-gradient rounded-start">
+                                    <a class="btn filter-button dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        All Filters
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">All Make</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Models</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mt-3 mt-md-0">
+                                <div class="dropdown bg-light bg-gradient rounded-md-end rounded-md-start">
+                                    <a class="btn filter-button dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        All Filters
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">All Make</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Models</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mt-3 mt-md-0">
+                                <div class="dropdown bg-light bg-gradient rounded-md-end rounded-md-start ">
+                                    <a class="btn filter-button dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        All Filters
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">All Make</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Models</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mt-3 mt-md-0">
+                                <div class="dropdown bg-light bg-gradient rounded-end  ">
+                                    <a class="btn filter-button dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        All Filters
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">All Make</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Models</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="row row-cols-2 row-cols-md-3 g-3">
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+                            <img class="img-fluid" src="/frontend/assets/daihatsu charade.png" alt="">
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">daihatsu charade</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/suzuki-bolan.png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">suzuki bolan</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/honda civic exi.png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">honda civic exi</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/fiat 480.png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">fiat 480, 640 tractor</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/datsun 120y.png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">datsun 120y, 411 & toyota</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/honda air wave.png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">honda air wave 17220</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/ford transit wagon (2).png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">ford transit wagon - 1568410</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/ford 592e engine (2).png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">ford 592E engine</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col d-flex flex-column justify-content-between">
+                        <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
+                            style="height: 100%;">
+
+
+                            <img class="img-fluid" src="/frontend/assets/honda-cd-70.png" alt="">
+
+                        </div>
+                        <ul
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            <li>
+                                <b class="text-black product-title">honda CD-70 17211-065-700</b>
+                            </li>
+                            <li><button type="button" class="product-btn">view</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container mt-5">
+                <ul class="list-unstyled d-flex justify-content-center align-items-center">
+                    <li class="flex-grow-1">
+                        <hr style="border: 1px solid blueviolet; width: 100%;">
+                    </li>
+                    <li class="mx-1"><button type="button"
+                            class="products-btn-more-products rounded-pill text-primary px-5 py-3 bg-transparent border">See
+                            More
+                            Products</button>
+                    </li>
+                    <li class="flex-grow-1">
+                        <hr style="border: 1px solid blueviolet; width: 100%;">
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <!--featured products  -->
+        <section class="featured-products mt-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 ">
+                    <div class="col d-flex flex-column justify-content-center">
+                        <ul class="list-unstyled d-flex flex-column gap-4">
+                            <li class="text-center text-md-start">
+                                <h3 class="fs-1 featured-products-title">featured products</h3>
+                            </li>
+                            <li class="text-center text-md-start">
+                                <p class="fs-6 text-black">Top Picks for Your Filtration Needs</p>
+                            </li>
+                            <li class="text-center text-md-start">
+                                <p class="text-body-secondary">Discover our range of featured filters, meticulously
+                                    selected
+                                    for their outstanding
+                                    performance and reliability. Our premium air, cabin, fuel, and oil filters are
+                                    designed
+                                    to keep your vehicle running smoothly and efficiently. Each product offers superior
+                                    filtration, ensuring optimal engine health and longevity.
+
+                                </p>
+                            </li>
+                            <li class="text-center text-md-start">
+                                <p class="text-body-secondary"> Explore our featured products below and learn more about
+                                    how
+                                    they can enhance your
+                                    vehicle's performance. Trust us to provide the best solutions for all your
+                                    filtration
+                                    needs.</p>
+                            </li>
+                            <li class="text-center text-md-start"><button type="button"
+                                    class="text-white featured-products-btn rounded-pill">View All
+                                    Products</button></li>
+                        </ul>
+                    </div>
+                    <div class="col mt-4 mt-md-0">
+                        <div id="carouselExampleIndicators" class="carousel rounded slide" data-bs-ride="carousel"
+                            data-bs-interval="5000">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active circle-btn" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    class="circle-btn" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    class="circle-btn" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active ">
+                                    <ul class="list-unstyled">
+                                        <li class="ms-3"><b class="fs-1">NISSAN</b></li>
+                                        <li class="d-flex justify-content-center">
+                                            <div>
+                                                <img class="img-fluid" src="/frontend/assets/nissan-filter-img.png"
+                                                    alt="">
+
+                                            </div>
+                                        </li>
+                                        <li class="text-center px-4">
+                                            <p>Car Oil Filter Replacement Filter Paper 04152-YZZA6 for Toyota Avalon
+                                                2000-2005</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="carousel-item ">
+                                    <ul class="list-unstyled">
+                                        <li class="ms-3"><b class="fs-1">NISSAN</b></li>
+                                        <li class="d-flex justify-content-center">
+                                            <div>
+                                                <img class="img-fluid" src="/frontend/assets/nissan-filter-img.png"
+                                                    alt="">
+
+                                            </div>
+                                        </li>
+                                        <li class="text-center px-4">
+                                            <p>Car Oil Filter Replacement Filter Paper 04152-YZZA6 for Toyota Avalon
+                                                2000-2005</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="carousel-item ">
+                                    <ul class="list-unstyled">
+                                        <li class="ms-3"><b class="fs-1">NISSAN</b></li>
+                                        <li class="d-flex justify-content-center">
+                                            <div>
+                                                <img class="img-fluid" src="/frontend/assets/nissan-filter-img.png"
+                                                    alt="">
+
+                                            </div>
+                                        </li>
+                                        <li class="text-center px-4">
+                                            <p>Car Oil Filter Replacement Filter Paper 04152-YZZA6 for Toyota Avalon
+                                                2000-2005</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  testimonials -->
+        <br>
+        <section class="testimonials my-5" id="Testimonials">
+            <div class="container">
+                <ul class="list-unstyled">
+                    <li class="text-center">
+                        <h2 class="testimonials-heading">what our clients say</h2>
+                    </li>
+                    <li class="text-center mt-3">
+                        <p class="text-black">Trusted Feedback from Satisfied Customers</p>
+                    </li>
+                </ul>
+
+                <div class="container mt-5">
+
+
+                    <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div>
+                                        <div class="col bg-light rounded">
+                                            <ul class="list-unstyled px-3 pt-3">
+                                                <li><img class="img-fluid" src="/frontend/assets/quote.png" alt=""></li>
+                                                <li class="my-3">
+                                                    <p class="text-body-secondary">I've been using Allied Filters for
+                                                        years, and
+                                                        they never disappoint. The durability and performance of these
+                                                        filters
+                                                        are outstanding. They fit perfectly and keep my customers'
+                                                        engines
+                                                        running smoothly.</p>
+                                                </li>
+
+                                            </ul>
+                                            <ul class="list-unstyled d-flex align-items-center px-md-3 px-1 pb-3">
+                                                <li>
+                                                    <img class="img-fluid" src="/frontend/assets/men-1.png" alt="">
+                                                </li>
+                                                <li class="ms-4">
+                                                    <ul class="list-unstyled d-flex flex-column ">
+                                                        <li>
+
+                                                            <b class="text-black fs-6">Dianne Russell</b>
+                                                        </li>
+                                                        <li>
+                                                            <p class="text-body-secondary">Fleet Manager</p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class=" ms-auto">
+                                                    <img class="img-fluid" src="/frontend/assets/Rating-1.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div>
+                                        <div class="col bg-light rounded">
+                                            <ul class="list-unstyled px-3 pt-3">
+                                                <li><img class="img-fluid" src="/frontend/assets/quote.png" alt=""></li>
+                                                <li class="my-3">
+                                                    <p class="text-body-secondary">As someone who loves working on my
+                                                        own car, finding the right filter is crucial. Allied Filters
+                                                        provide the best quality and performance I’ve experienced.</p>
+                                                </li>
+
+                                            </ul>
+                                            <ul class="list-unstyled d-flex align-items-center px-md-3 px-1 pb-3">
+                                                <li>
+                                                    <img class="img-fluid" src="/frontend/assets/men-2.png" alt="">
+                                                </li>
+                                                <li class="ms-4">
+                                                    <ul class="list-unstyled d-flex flex-column ">
+                                                        <li>
+
+                                                            <b class="text-black fs-6">Robert Fox</b>
+                                                        </li>
+                                                        <li>
+                                                            <p class="text-body-secondary">Automative Technician</p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class=" ms-auto">
+                                                    <img class="img-fluid" src="/frontend/assets/rating-2.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div>
+                                        <div class="col bg-light rounded">
+                                            <ul class="list-unstyled px-3 pt-3">
+                                                <li><img class="img-fluid" src="/frontend/assets/quote.png" alt=""></li>
+                                                <li class="my-3">
+                                                    <p class="text-body-secondary">Our fleet relies heavily on the
+                                                        reliability of Allied Filters. From trucks to heavy machinery,
+                                                        their filters offer superior protection. We’ve seen a
+                                                        noticeableimprovement in fuel efficiency
+                                                    </p>
+                                                </li>
+
+                                            </ul>
+                                            <ul class="list-unstyled d-flex align-items-center px-md-3 px-1  pb-3">
+                                                <li>
+                                                    <img class="img-fluid" src="/frontend/assets/men-3.png" alt="">
+                                                </li>
+                                                <li class="ms-4">
+                                                    <ul class="list-unstyled d-flex flex-column ">
+                                                        <li>
+
+                                                            <b class="text-black fs-6">Eleanor Pena</b>
+                                                        </li>
+                                                        <li>
+                                                            <p class="text-body-secondary">Fleet Manager</p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="ms-auto">
+                                                    <img class="img-fluid" src="/frontend/assets/rating-3.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div>
+                                        <div class="col bg-light rounded">
+                                            <ul class="list-unstyled px-3 pt-3">
+                                                <li><img class="img-fluid" src="/frontend/assets/quote.png" alt=""></li>
+                                                <li class="my-3">
+                                                    <p class="text-body-secondary">As someone who loves working on my
+                                                        own car, finding the right filter is crucial. Allied Filters
+                                                        provide the best quality and performance I’ve experienced.</p>
+                                                </li>
+
+                                            </ul>
+                                            <ul class="list-unstyled d-flex align-items-center px-md-3  pb-3">
+                                                <li>
+                                                    <img class="img-fluid" src="/frontend/assets/men-2.png" alt="">
+                                                </li>
+                                                <li class="ms-4">
+                                                    <ul class="list-unstyled d-flex flex-column ">
+                                                        <li>
+
+                                                            <b class="text-black fs-6">Robert Rox</b>
+                                                        </li>
+                                                        <li>
+                                                            <p class="text-body-secondary">Automotive Technician</p>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="ms-0 ms-md-auto">
+                                                    <img class="img-fluid" src="/frontend/assets/rating-2.png" alt="">
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <br>
+    <br>
+    <footer class="footer mt-5">
+        <div class="container-fluid footer-box p-4">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <ul class="list-unstyled d-flex flex-column gap-4 ">
+                        <li class="me-auto">
+                            <a href="#">
+                                <img class="img-fluid" src="/frontend/assets/logo.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <p class="text-white">
+                                Allied Air Filters ensure your engine receives clean, debris-free air. Made from
+                                high-quality materials, they enhance performance, extend engine life, and improve fuel
+                                efficiency
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-8 d-flex justify-content-between mt-5 mt-md-0">
+                    <div class="row row-cols-2 row-cols-md-3">
+
+                        <ul class=" col list-unstyled d-flex flex-column gap-4">
+                            <li>
+                                <b class="text-white">Quick Links</b>
+
+                            </li>
+                            <li>
+                                <ul class="list-unstyled d-flex flex-column gap-3">
+                                    <li>
+                                        <a href="" class="text-decoration-none text-light fw-light">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none text-light fw-light">About Us </a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none text-light fw-light">Clients</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none text-light fw-light">Brands</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none text-light fw-light">Featured
+                                            Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none text-light fw-light">Products</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="text-decoration-none text-light fw-light">Testimonials</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <ul class=" col list-unstyled d-flex flex-column gap-4">
+                            <li>
+                                <b class="text-white">Office Time</b>
+                            </li>
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li>
+                                    <p href="" class="text-decoration-none text-light fw-light">Monday - Saturday</p>
+                                </li>
+                                <li>
+                                    <p class="text-white text-light">08:00 AM - 04:30 PM</p>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="col list-unstyled d-flex flex-column gap-4 mt-3 mt-md-0">
+                            <li>
+                                <b class="text-white">Contact us</b>
+                            </li>
+                            <ul class="list-unstyled d-flex flex-column gap-3">
+                                <li>
+                                    <ul class="list-unstyled d-flex gap-2">
+                                        <p><i class="bi bi-telephone-fill text-white"></i></p>
+                                        <p href="" class="text-decoration-none text-light text-white fw-light">
+                                            +92-42-111-007-666
+                                        </p>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="list-unstyled d-flex gap-2">
+                                        <p><i class="bi bi-telephone-fill text-white"></i></p>
+                                        <p href="" class="text-decoration-none text-light text-white fw-light">
+                                            +92-42-5426082
+                                        </p>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p href="" class="text-decoration-none text-light text-white fw-light">
+                                        <span><i class="bi bi-geo-alt-fill"></i></span> Allied Filter Factory, Wahdat
+                                        Road,
+                                        Lahore Pakistan
+                                    </p>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap Bundle JS -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <!-- splide js -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="/frontend/index.js"></script>
+</body>
+
+</html>
