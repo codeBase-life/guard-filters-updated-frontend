@@ -1,5 +1,5 @@
 function fetchAndDisplayProducts(query = "") {
-  fetch(`http://localhost:3000/api/products${query}`)
+  fetch(`https://guard-filters-updated-backend.vercel.app/api/products${query}`)
     .then((data) => data.json())
     .then((products) => {
       const products_section = document.getElementById(
@@ -45,7 +45,7 @@ fetchAndDisplayProducts();
 async function fetchFilterValues() {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/products/filter_values"
+      "https://guard-filters-updated-backend.vercel.app/api/products/filter_values"
     );
     const filterValues = await response.json();
     return filterValues;
