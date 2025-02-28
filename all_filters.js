@@ -1,12 +1,24 @@
+// helper function to update query parameter
+function updateQueryParameter(query, key, value) {
+  const urlParams = new URLSearchParams(query);
+  urlParams.set(key, value);
+  return "?" + urlParams.toString();
+}
 function fetchAndDisplayProducts(query = "") {
-  fetch(`https://guard-filters-updated-backend.vercel.app/api/products${query}`)
+  // https://guard-filters-updated-frontend.vercel.app/
+  fetch(
+    `https://guard-filters-updated-frontend.vercel.app/api/products${query}`
+  )
     .then((data) => data.json())
     .then((products) => {
+      const product = products.Products;
+
       const products_section = document.getElementById(
         "all-products-products-section"
       );
       products_section.innerHTML = "";
-      products.forEach((item) => {
+
+      product.forEach((item) => {
         const first_inner_div = document.createElement("div");
         first_inner_div.className =
           "col d-flex flex-column justify-content-between";
@@ -35,17 +47,75 @@ function fetchAndDisplayProducts(query = "") {
         first_inner_div.appendChild(inner_ul);
         products_section.appendChild(first_inner_div);
       });
+      // bootstrap pagination control
+      const paginationContainer = document.getElementById(
+        "pagination-container"
+      );
+      paginationContainer.innerHTML = "";
+      const currentPage = products.currentPage;
+      const totalPages = products.totalPages;
+      //  previous btn
+      const prevli = document.createElement("li");
+      prevli.className = currentPage === 1 ? "page-item disabled" : "page-item";
+      const prevLink = document.createElement("a");
+      prevLink.className = "page-link";
+      prevLink.href = "#";
+      prevLink.innerText = "Previous";
+      prevLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage > 1) {
+          const newQuery = updateQueryParameter(query, "page", currentPage - 1);
+          fetchAndDisplayProducts(newQuery);
+        }
+      });
+      prevli.appendChild(prevLink);
+      paginationContainer.appendChild(prevli);
+
+      // Page numbers (optional: display only few page numbers for long lists)
+      for (let i = 1; i < totalPages; i++) {
+        const pageLi = document.createElement("li");
+        pageLi.className = i === currentPage ? "page-item active" : "page-item";
+        const pageLink = document.createElement("a");
+        pageLink.className = "page-link";
+        pageLink.href = "#";
+        pageLink.innerText = i;
+        pageLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          const newQuery = updateQueryParameter(query, "page", i);
+          fetchAndDisplayProducts(newQuery);
+        });
+        pageLi.appendChild(pageLink);
+        paginationContainer.appendChild(pageLi);
+      }
+
+      // next btn
+      const nextLi = document.createElement("li");
+      nextLi.className =
+        currentPage === totalPages ? "page-item disabled" : "page-item";
+      const nextLink = document.createElement("a");
+      nextLink.className = "page-link";
+      nextLink.href = "#";
+      nextLink.innerText = "Next";
+      nextLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (currentPage < totalPages) {
+          const newQuery = updateQueryParameter(query, "page", currentPage + 1);
+          fetchAndDisplayProducts(newQuery);
+        }
+      });
+      nextLi.appendChild(nextLink);
+      paginationContainer.appendChild(nextLi);
     })
     .catch((err) => console.error("error fetching products", err));
 }
-fetchAndDisplayProducts();
+fetchAndDisplayProducts("?page=1");
 
 // FILTER VALUES ----------------------------------------------------------------
 
 async function fetchFilterValues() {
   try {
     const response = await fetch(
-      "https://guard-filters-updated-backend.vercel.app/api/products/filter_values"
+      "https://guard-filters-updated-frontend.vercel.app/api/products/filter_values"
     );
     const filterValues = await response.json();
     return filterValues;
@@ -127,7 +197,7 @@ fetchFilterValues().then((values) => {
       event.preventDefault();
       const filterType = link.getAttribute("data-filter");
       const filterValue = link.getAttribute("data-value");
-      const query = `?${filterType}=${filterValue}`;
+      const query = `?${filterType}=${filterValue}&page=1`;
       fetchAndDisplayProducts(query);
       console.log(query);
     });
