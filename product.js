@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   var tooltipTriggerList = [].slice.call(
+//     document.querySelectorAll('[data-bs-toggle="tooltip"]')
+//   );
+//   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+//     return new bootstrap.Tooltip(tooltipTriggerEl);
+//   });
+// });
 
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -102,15 +102,6 @@ if (productId) {
 } else {
   console.error("product ID not found in the url");
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  var tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   var tooltipTriggerList = [].slice.call(
