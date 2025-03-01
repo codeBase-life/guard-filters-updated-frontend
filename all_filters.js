@@ -114,7 +114,7 @@ fetchAndDisplayProducts("?page=1");
 async function fetchFilterValues() {
   try {
     const response = await fetch(
-      "https://guard-filters-updated-frontend.vercel.app/api/products/filter_values"
+      "http://localhost:3000/api/products/filter_values"
     );
     const filterValues = await response.json();
     return filterValues;
