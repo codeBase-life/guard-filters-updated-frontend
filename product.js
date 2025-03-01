@@ -1,3 +1,24 @@
+var swiper = new Swiper(".swiper", {
+  effect: "coverflow", // Enable coverflow effect
+  // grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  allowTouchMove: false,
+  loop: true,
+  coverflowEffect: {
+    rotate: 0, // Slide rotate in degrees
+    stretch: 0, // Stretch space between slides (in px)
+    depth: 100, // Depth offset in px (slides translate in Z axis)
+    modifier: 6, // Effect multiplier (change from 0 to 1)
+    slideShadows: true, // Enables slide shadows
+  },
+
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -21,7 +42,7 @@ async function fetchProductDetails(productId) {
     const secondTopProduct = product.topProductSecond;
     const ActualProduct = product.actualProduct;
     dynamicTitleSection(ActualProduct.title, ActualProduct.filter_type);
-
+    onlyTitle(ActualProduct.title);
     displayTopProducts(firstTopProduct, secondTopProduct);
   } catch (error) {
     console.error("error fetching product details", error);
@@ -52,6 +73,14 @@ const dynamicTitleSection = (title, type) => {
   titleSec.appendChild(titleSecLi);
 };
 
+const onlyTitle = (title) => {
+  const item = document.getElementById("productTitleBox");
+  const para = document.createElement("p");
+  para.innerText = title;
+  para.classList.add("text-align-center", "fs-1", "product-title");
+  item.appendChild(para);
+};
+
 function displayTopProducts(first, second) {
   const firstProduct = document.getElementById("firstTopProductBox");
   firstProduct.innerHTML = "";
@@ -71,7 +100,7 @@ function displayTopProducts(first, second) {
     );
     tooltipButton.innerHTML = '<i class="bi bi-chevron-left text-dark"></i>';
     const link = document.createElement("a");
-    link.href = "";
+    link.href = `./product.html?id=${element.id}`;
     link.className = "text-decoration-none";
     link.appendChild(tooltipButton);
     firstProduct.appendChild(link);
@@ -106,7 +135,7 @@ function displayTopProducts(first, second) {
     );
     tooltipButton.innerHTML = '<i class="bi bi-chevron-right text-dark"></i>';
     const link = document.createElement("a");
-    link.href = "";
+    link.href = `./product.html?id=${element.id}`;
     link.className = "text-decoration-none";
     link.appendChild(tooltipButton);
     firstProduct.appendChild(link);

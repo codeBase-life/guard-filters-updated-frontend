@@ -14,6 +14,9 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./product.css">
+
+    <!-- swipper link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Document</title>
 </head>
 
@@ -158,6 +161,108 @@
                 </div>
             </div>
         </section>
+
+
+        <section class="product-title mt-5">
+            <div class="container text-center" id="productTitleBox">
+                <!-- here data is coming dynamicaly from js  -->
+
+            </div>
+        </section>
+
+        <!-- products slider -->
+        <section class="products-section mt-3">
+            <!-- Slider main container -->
+            <div class="swiper py-5">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img class="swiper-img" src="./assets/datsun 120y.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="swiper-img" src="./assets/fiat 480.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="swiper-img" src="./assets/ford transit wagon (2).png" alt="">
+                    </div>
+                </div>
+                <div class="position-absolute d-flex gap-2 top-0 start-50 position-two-icons">
+                    <div class="">
+                        <img class="img-fluid" src="./assets/map-add.png" alt="">
+                    </div>
+                    <div class="">
+                        <img class="img-fluid" src="./assets/download.png" alt="">
+                    </div>
+                </div>
+                <div class="position-absolute d-flex gap-3 bottom-0 start-50  z-1 position-three-icons">
+                    <div>
+                        <img class="img-fluid" src="./assets/guarantee.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="./assets/guarantee.png" alt="">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="./assets/guarantee.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="product-details mt-5">
+            <div class="container">
+
+
+                <div class="row row-cols-2 ">
+                    <div class="col">
+                        <ul
+                            class="list-unstyled bg-white rounded d-flex justify-content-md-between align-items-center justify-content-center  h-100">
+                            <li>
+                                <a href="">
+                                    <ul class="list-unstyled d-flex flex-column ps-3">
+                                        <li>
+                                            <i class="bi bi-chevron-left text-dark p-0"></i>
+                                            <span class="text-dark">Previous</span>
+                                        </li>
+                                        <li>
+                                            <p class="text-dark fw-bold text-center">honda</p>
+                                        </li>
+                                    </ul>
+                                </a>
+                            </li>
+                            <li class="d-none d-sm-block">
+                                <img class="img-fluid" src="./assets/daihatsu charade.png" width="100px" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul
+                            class="list-unstyled bg-white rounded h-100 d-flex justify-content-md-between justify-content-center align-items-center">
+                            <li class="d-none d-sm-block">
+                                <img class="img-fluid" src="./assets/datsun 120y.png" width="100px" alt="">
+                            </li>
+                            <li>
+                                <a href="">
+                                    <ul class="list-unstyled d-flex flex-column pe-3">
+                                        <li>
+                                            <span class="text-dark">Next</span>
+                                            <i class="bi bi-chevron-right text-dark p-0"></i>
+                                        </li>
+                                        <li>
+                                            <p class="text-dark fw-bold text-center">honda</p>
+                                        </li>
+                                    </ul>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
     </main>
 
 
@@ -278,6 +383,9 @@
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="./product.js"></script>
 </body>
 
