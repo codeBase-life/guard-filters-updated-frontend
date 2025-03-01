@@ -3,6 +3,7 @@ var swiper = new Swiper(".swiper", {
   // grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
+
   allowTouchMove: false,
   loop: true,
   coverflowEffect: {
@@ -44,10 +45,46 @@ async function fetchProductDetails(productId) {
     dynamicTitleSection(ActualProduct.title, ActualProduct.filter_type);
     onlyTitle(ActualProduct.title);
     displayTopProducts(firstTopProduct, secondTopProduct);
+    productSlider(ActualProduct);
   } catch (error) {
     console.error("error fetching product details", error);
   }
 }
+
+// product inside slider
+
+const productSlider = (product) => {
+  let slider = document.getElementById("swiper-wrapper");
+
+  // First slide
+  const box = document.createElement("div");
+  box.className = "swiper-slide";
+  const img = document.createElement("img");
+  img.className = "swiper-img";
+  img.src = product.image;
+  box.appendChild(img);
+  slider.appendChild(box);
+
+  // Second slide
+  const box1 = document.createElement("div");
+  box1.className = "swiper-slide"; // Use box1 here
+  const img1 = document.createElement("img");
+  img1.className = "swiper-img";
+  img1.src = product.image;
+  box1.appendChild(img1); // Append to box1
+  slider.appendChild(box1);
+
+  // third slide
+
+  const box2 = document.createElement("div");
+  box2.className = "swiper-slide"; // Use box1 here
+  const img2 = document.createElement("img");
+  img2.className = "swiper-img";
+  img2.src = product.image;
+  box2.appendChild(img2); // Append to box1
+  slider.appendChild(box2);
+};
+
 // for dynamic title
 const dynamicTitleSection = (title, type) => {
   const titleSec = document.getElementById("breadcrumb-ol");
