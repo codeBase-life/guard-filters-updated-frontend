@@ -88,12 +88,12 @@ function displayTopProducts(first, second) {
   });
 
   // for reinitialize the tooltip
-  // var tooltipTriggerList = [].slice.call(
-  //   document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  // );
-  // var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  //   return new bootstrap.Tooltip(tooltipTriggerEl);
-  // });
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 }
 
 const productId = getQueryParam("id");
