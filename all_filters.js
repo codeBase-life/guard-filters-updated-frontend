@@ -38,8 +38,7 @@ function fetchAndDisplayProducts(query = "") {
                <b class="text-black product-title">${item.title}</b>
               `;
         const ul_second_li = document.createElement("li");
-        ul_second_li.innerHTML =
-          '<button type="button" class="product-btn">view</button>';
+        ul_second_li.innerHTML = `<a href="./product.html?id=${item.id}">  <button type="button" class="product-btn">view</button></a>`;
         inner_ul.appendChild(ul_first_li);
         inner_ul.appendChild(ul_second_li);
 

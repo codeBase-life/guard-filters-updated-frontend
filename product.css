@@ -1,0 +1,191 @@
+/* Global reset and base styles */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+
+
+/* navbar */
+.logo {
+    width: 70px;
+}
+
+.home-link {
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+
+
+.filter-button {
+    background-color: #f8a4a4;
+    border: none;
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 25px;
+    margin-right: 10px;
+    
+}
+
+.filter-button:focus {
+    outline: none;
+}
+
+.search-icon-btn{
+   border: none;
+   background-color: white;
+   padding: 12px;
+}
+.search-input {
+    border: none;
+    font-size: 16px;
+    color: #A9A9A9;
+    padding: 15px;
+    
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-icon {
+    color: #A9A9A9;
+    font-size: 20px;
+    
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.company-link {
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+}
+
+.products-link {
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+}
+
+.contact {
+    font-size: 20px;
+}
+
+
+/* main */
+/* breadcrumb area */
+.tooltip-inner {
+    max-width: none;
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+  }
+  /* Ensure your image is constrained */
+  .custom-tooltip img {
+    max-width: 50px; /* adjust this value as needed */
+    width: auto;
+  }
+
+
+/* footer */
+.footer-box{
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+}
