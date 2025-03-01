@@ -20,12 +20,37 @@ async function fetchProductDetails(productId) {
     const firstTopProduct = product.topProductFirst;
     const secondTopProduct = product.topProductSecond;
     const ActualProduct = product.actualProduct;
+    dynamicTitleSection(ActualProduct.title, ActualProduct.filter_type);
 
     displayTopProducts(firstTopProduct, secondTopProduct);
   } catch (error) {
     console.error("error fetching product details", error);
   }
 }
+// for dynamic title
+const dynamicTitleSection = (title, type) => {
+  const titleSec = document.getElementById("breadcrumb-ol");
+  // for filter type
+  const titleLi = document.createElement("li");
+  titleLi.className = "breadcrumb-item";
+  const hrefLi = document.createElement("a");
+  hrefLi.href = "./index.html";
+  hrefLi.className = "text-decoration-none text-dark";
+  hrefLi.innerText = `${type}`;
+  titleLi.appendChild(hrefLi);
+  titleSec.appendChild(titleLi);
+
+  // for dynamic title
+  const titleSecLi = document.createElement("li");
+  titleSecLi.className = "breadcrumb-item active";
+  const hrefSecLi = document.createElement("a");
+  hrefSecLi.href = "#";
+  hrefSecLi.className = "text-decoration-none fw-bold text-dark";
+  hrefSecLi.setAttribute("area-current", "page");
+  hrefSecLi.innerText = `${title}`;
+  titleSecLi.appendChild(hrefSecLi);
+  titleSec.appendChild(titleSecLi);
+};
 
 function displayTopProducts(first, second) {
   const firstProduct = document.getElementById("firstTopProductBox");
