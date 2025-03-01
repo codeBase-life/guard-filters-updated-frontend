@@ -41,19 +41,98 @@ async function fetchProductDetails(productId) {
     const product = await response.json();
     const firstTopProduct = product.topProductFirst;
     const secondTopProduct = product.topProductSecond;
+    const middleFirst = product.middleProductFirst;
+    const middleSecond = product.middleProductSecond;
+
     const ActualProduct = product.actualProduct;
     dynamicTitleSection(ActualProduct.title, ActualProduct.filter_type);
     onlyTitle(ActualProduct.title);
     displayTopProducts(firstTopProduct, secondTopProduct);
-    productSlider(ActualProduct);
+    productSlider(ActualProduct, middleFirst, middleSecond);
+    productsPagination(middleFirst, middleSecond);
+    productData(ActualProduct);
   } catch (error) {
     console.error("error fetching product details", error);
   }
 }
+// actual product meta data
+const productData = (product) => {
+  const product_features = product.key_features;
+  const product_specifications = product.specifications;
+
+  const part_no = document.getElementById("part_no");
+  const oem = document.getElementById("oem_no");
+  const quality = document.getElementById("product_quality");
+  const brand = document.getElementById("brand");
+  const price = document.getElementById("price");
+  const availability = document.getElementById("availability");
+  const description = document.getElementById("product-description");
+  const efficiency_txt = document.getElementById("efficiency");
+  const durability = document.getElementById("durability");
+  const installation = document.getElementById("installation");
+  const protection = document.getElementById("Protection");
+  const material = document.getElementsByClassName("material");
+  const filtration_effi = document.getElementById("filtration_efficiency");
+  const dimension = document.getElementById("dimensions");
+  const weight = document.getElementById("weight");
+  part_no.innerText = product.part_no;
+  oem.innerText = product.oem_number;
+  quality.innerText = product.product_quality;
+  brand.innerText = product.brand;
+  price.innerText = ` ${product.price} PKR/-`;
+  availability.innerText = product.availability;
+  description.innerText = product.description;
+
+  product_features.forEach((item) => {
+    efficiency_txt.innerText = item.efficiency;
+    durability.innerText = item.durability;
+    installation.innerText = item.easy_installation;
+    protection.innerText = item.engine_protection;
+  });
+  product_specifications.forEach((item) => {
+    material.innerText = item.material;
+    console.log(item.material);
+  });
+};
+
+// products previous and next section
+const productsPagination = (first, second) => {
+  // previous-product
+
+  const prev = document.getElementById("product-previous");
+  const img = document.createElement("img");
+  img.className = "img-fluid";
+  img.src = second.image;
+  img.width = 100;
+  prev.appendChild(img);
+
+  // left product
+  const left = document.getElementById("left-product");
+  left.href = `./product.html?id=${second.id}`;
+
+  // left title
+  const left_title = document.getElementById("left-title");
+  left_title.innerText = second.title;
+
+  // next product
+  const next = document.getElementById("product-next");
+  const img1 = document.createElement("img");
+  img1.className = "img-fluid";
+  img1.src = first.image;
+  img1.width = 100;
+  next.appendChild(img1);
+
+  // right product
+  const right = document.getElementById("right-product");
+  right.href = `./product.html?id=${first.id}`;
+  // right title
+  const right_title = document.getElementById("right-title");
+  right_title.innerText = first.title;
+};
 
 // product inside slider
 
-const productSlider = (product) => {
+const productSlider = (product, first, second) => {
   let slider = document.getElementById("swiper-wrapper");
 
   // First slide
@@ -61,7 +140,7 @@ const productSlider = (product) => {
   box.className = "swiper-slide";
   const img = document.createElement("img");
   img.className = "swiper-img";
-  img.src = product.image;
+  img.src = second.image;
   box.appendChild(img);
   slider.appendChild(box);
 
@@ -80,7 +159,7 @@ const productSlider = (product) => {
   box2.className = "swiper-slide"; // Use box1 here
   const img2 = document.createElement("img");
   img2.className = "swiper-img";
-  img2.src = product.image;
+  img2.src = first.image;
   box2.appendChild(img2); // Append to box1
   slider.appendChild(box2);
 };

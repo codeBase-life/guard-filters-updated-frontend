@@ -202,7 +202,9 @@
         </section>
 
 
-        <section class="product-details mt-5">
+
+
+        <section class="product-two-navigation mt-5">
             <div class="container">
 
 
@@ -211,43 +213,138 @@
                         <ul
                             class="list-unstyled bg-white rounded d-flex justify-content-md-between align-items-center justify-content-center  h-100">
                             <li>
-                                <a href="">
+                                <a href="" id="left-product">
                                     <ul class="list-unstyled d-flex flex-column ps-3">
                                         <li>
                                             <i class="bi bi-chevron-left text-dark p-0"></i>
                                             <span class="text-dark">Previous</span>
                                         </li>
                                         <li>
-                                            <p class="text-dark fw-bold text-center">honda</p>
+                                            <p class="text-dark fw-bold text-center" id="left-title"></p>
                                         </li>
                                     </ul>
                                 </a>
                             </li>
-                            <li class="d-none d-sm-block">
-                                <img class="img-fluid" src="./assets/daihatsu charade.png" width="100px" alt="">
+                            <li class="d-none d-sm-block" id="product-previous">
+
                             </li>
                         </ul>
                     </div>
                     <div class="col">
                         <ul
                             class="list-unstyled bg-white rounded h-100 d-flex justify-content-md-between justify-content-center align-items-center">
-                            <li class="d-none d-sm-block">
-                                <img class="img-fluid" src="./assets/datsun 120y.png" width="100px" alt="">
+                            <li class="d-none d-sm-block" id="product-next">
+                                <!-- <img class="img-fluid" src="./assets/datsun 120y.png" width="100px" alt=""> -->
                             </li>
                             <li>
-                                <a href="">
+                                <a href="" id="right-product">
                                     <ul class="list-unstyled d-flex flex-column pe-3">
                                         <li>
                                             <span class="text-dark">Next</span>
                                             <i class="bi bi-chevron-right text-dark p-0"></i>
                                         </li>
                                         <li>
-                                            <p class="text-dark fw-bold text-center">honda</p>
+                                            <p class="text-dark fw-bold text-center" id="right-title"></p>
                                         </li>
                                     </ul>
                                 </a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="product-meta-data mt-5">
+            <div class="container">
+                <div class="row row-cols-2 row-cols-md-3 gy-3">
+                    <div class="col">
+                        <p class="bg-colorfull rounded-pill text-center  "> Guard Part No: <span class="fw-light"
+                                id="part_no"></span></p>
+                    </div>
+                    <div class="col">
+                        <p class="bg-colorfull rounded-pill text-center ">
+                            OEM No:
+                            <span class="fw-light" id="oem_no"></span>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="bg-colorfull rounded-pill text-center ">
+                            Product Quality:
+                            <span class="fw-light" id="product_quality"></span>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="bg-colorfull rounded-pill text-center ">
+                            Brand:
+                            <span class="fw-light" id="brand"></span>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="bg-colorfull rounded-pill text-center ">
+                            Price:
+                            <span class="fw-light" id="price"></span>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="bg-colorfull rounded-pill text-center">
+                            Availability:
+                            <span class="fw-light" id="availability"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="product-description mt-5">
+            <div class="container">
+                <div class="">
+                    <p class="fw-semibold text-center bg-colorfull rounded-top py-3">Description</p>
+                    <p class="fw-light text-dark text-center bg-white rounded-bottom" id="product-description"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-features mt-5">
+            <div class="container">
+                <div class="row row-cols-md-2 row-cols-1">
+                    <div class="col">
+                        <p class="fw-semibold text-center bg-colorfull rounded-top py-3">Key Features</p>
+                        <ul class="list-unstyled bg-white rounded-bottom p-3">
+                            <p class="fw-semibold text-dark">High Filtration Efficiency: <span id="efficiency"
+                                    class=" text-dark fw-light"></span>
+                            </p>
+                            <p class="fw-semibold text-dark">Durable Construction: <span id="durability"
+                                    class=" text-dark fw-light"></span>
+                            </p>
+                            <p class="fw-semibold text-dark">Easy Installation: <span id="installation"
+                                    class=" text-dark fw-light"></span>
+                            </p>
+                            <p class="fw-semibold text-dark">Enhanced Engine Protection: <span id="Protection"
+                                    class=" text-dark fw-light"></span>
+                            </p>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <p class="fw-semibold text-center bg-colorfull rounded-top py-3">Specifications</p>
+                        <div class="list-unstyled bg-white rounded-bottom p-3 d-flex justify-content-between">
+                            <div>
+                                <p class="text-dark fw-semibold">Material</p>
+                                <p class="text-dark fw-semibold">Filtration Efficiency </p>
+                                <p class="text-dark fw-semibold">Dimensions</p>
+                                <p class="text-dark fw-semibold">Weight</p>
+                            </div>
+                            <!-- <div class="vr"></div> -->
+                            <div>
+                                <p class="text-dark fw-light" id="material"> gr</p>
+                                <p class="text-dark fw-light" id="filtration_efficiency"></p>
+                                <p class="text-dark fw-light" id="dimensions"></p>
+                                <p class="text-dark fw-light" id="weight"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

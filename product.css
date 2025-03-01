@@ -229,6 +229,11 @@ video {
     width: 50px;
   }
 
+  /* product meta data */
+  .bg-colorfull{
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+  }
+
 /* footer */
 .footer-box{
     background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
