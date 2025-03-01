@@ -14,7 +14,7 @@ function getQueryParam(param) {
 async function fetchProductDetails(productId) {
   try {
     const response = await fetch(
-      `https://guard-filters-updated-frontend.vercel.app/api/product/${productId}`
+      `http://localhost:3000/api/product/${productId}`
     );
     const product = await response.json();
     const firstTopProduct = product.topProductFirst;

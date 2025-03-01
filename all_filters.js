@@ -6,9 +6,7 @@ function updateQueryParameter(query, key, value) {
 }
 function fetchAndDisplayProducts(query = "") {
   // https://guard-filters-updated-frontend.vercel.app/
-  fetch(
-    `https://guard-filters-updated-frontend.vercel.app/api/products${query}`
-  )
+  fetch(`http://localhost:3000/api/products${query}`)
     .then((data) => data.json())
     .then((products) => {
       const product = products.Products;
