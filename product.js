@@ -51,10 +51,49 @@ async function fetchProductDetails(productId) {
     productSlider(ActualProduct, middleFirst, middleSecond);
     productsPagination(middleFirst, middleSecond);
     productData(ActualProduct);
+    similar(product.similar);
   } catch (error) {
     console.error("error fetching product details", error);
   }
 }
+// similar products
+const similar = (product) => {
+  const products_place = document.getElementById("similar-products");
+  product.forEach((item) => {
+    const product_col = document.createElement("div");
+    product_col.className = "col";
+    const first_div = document.createElement("div");
+    first_div.className = "h-100";
+    const second_div = document.createElement("div");
+    second_div.className = "bg-white rounded p-3 product-image-container";
+    second_div.innerHTML = ` <img class="img-fluid product-img" src="${item.image}"  alt="">`;
+    const product_ul = document.createElement("ul");
+    product_ul.className = "list unstyled d-flex flex-column gap-3";
+    const first_para = document.createElement("p");
+    first_para.className = "fw-semibold text-dark products-title";
+    first_para.innerText = item.title;
+    const second_para = document.createElement("p");
+    second_para.className = "fw-semibold text-dark";
+
+    second_para.innerHTML = `Brand: <span class="text-danger fw-light">${item.filter_type}</span>`;
+
+    const link_btn = document.createElement("a");
+    link_btn.href = `./product.html?id=${item.id}`;
+    link_btn.role = "button";
+    link_btn.className =
+      "similar-products-btn rounded-pill text-center text-decoration-none py-2";
+    link_btn.innerText = "View Product";
+    product_ul.appendChild(first_para);
+    product_ul.appendChild(second_para);
+    product_ul.appendChild(link_btn);
+
+    first_div.appendChild(second_div);
+    first_div.appendChild(product_ul);
+    product_col.appendChild(first_div);
+    products_place.appendChild(product_col);
+  });
+};
+
 // actual product meta data
 const productData = (product) => {
   const product_features = product.key_features;
@@ -71,7 +110,8 @@ const productData = (product) => {
   const durability = document.getElementById("durability");
   const installation = document.getElementById("installation");
   const protection = document.getElementById("Protection");
-  const material = document.getElementsByClassName("material");
+
+  const material = document.getElementById("material");
   const filtration_effi = document.getElementById("filtration_efficiency");
   const dimension = document.getElementById("dimensions");
   const weight = document.getElementById("weight");
@@ -91,7 +131,9 @@ const productData = (product) => {
   });
   product_specifications.forEach((item) => {
     material.innerText = item.material;
-    console.log(item.material);
+    filtration_effi.innerText = item.filter_efficiency;
+    dimension.innerText = item.dimensions;
+    weight.innerText = item.weight;
   });
 };
 
