@@ -85,113 +85,115 @@ video {
     font-family: "Inter", serif;
     box-sizing: border-box;
     color: white;
-    overflow-x: hidden;
+    
 }
 
 
 
 
 /* navbar */
+/* navBar */
 .logo {
-    width: 70px;
+  width: 70px;
 }
 
 .home-link {
-    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
-    font-weight: 700;
+  background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 
 
 
 .filter-button {
-    background-color: #f8a4a4;
-    border: none;
-    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 5px 15px;
-    border-radius: 25px;
-    margin-right: 10px;
-    
+  background-color: #f8a4a4;
+  border: none;
+  background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 25px;
+  margin-right: 10px;
+  
 }
 
 .filter-button:focus {
-    outline: none;
+  outline: none;
 }
 
 .search-icon-btn{
-   border: none;
-   background-color: white;
-   padding: 12px;
+ border: none;
+ background-color: white;
+ padding: 12px;
 }
 .search-input {
-    border: none;
-    font-size: 16px;
-    color: #A9A9A9;
-    padding: 15px;
-    
+  border: none;
+  font-size: 16px;
+  color: #A9A9A9;
+  padding: 15px;
+  
 }
 
 .search-input:focus {
-    outline: none;
+  outline: none;
 }
 
 .search-icon {
-    color: #A9A9A9;
-    font-size: 20px;
-    
-    padding: 5px;
-    border-radius: 50%;
+  color: #A9A9A9;
+  font-size: 20px;
+  
+  padding: 5px;
+  border-radius: 50%;
 }
-
-
-
 /* for search results */
 .search-results {
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ccc;
-  max-height: 200px;
-  overflow-y: auto;
-  width: 100%;
-  z-index: 5;
-  transform: translateY(10px);
-  /* display: none; */
+ position: absolute;
+ background-color: white;
+ 
+ max-height: 200px;
+ overflow-y: auto;
+ width: 100%;
+ z-index: 5;
+ transform: translateY(10px);
+ /* display: none; */
 }
 .search-box-img{
-  height: 50px;
-  width: 50px;
-  object-fit: contain;
-  object-position: center;
+ height: 50px;
+ width: 50px;
+ object-fit: contain;
+ object-position: center;
 }
 
+
+
 .company-link {
-    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
+  background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
 }
 
 .products-link {
-    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
+  background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
 }
 
 .contact {
-    font-size: 20px;
+  font-size: 20px;
 }
+
+
 
 
 /* main */

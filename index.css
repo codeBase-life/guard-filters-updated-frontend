@@ -151,7 +151,7 @@
   .search-results {
     position: absolute;
     background-color: white;
-    border: 1px solid #ccc;
+    
     max-height: 200px;
     overflow-y: auto;
     width: 100%;
