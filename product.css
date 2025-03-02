@@ -152,6 +152,27 @@ video {
     border-radius: 50%;
 }
 
+
+
+/* for search results */
+.search-results {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 5;
+  transform: translateY(10px);
+  /* display: none; */
+}
+.search-box-img{
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  object-position: center;
+}
+
 .company-link {
     background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
     background-clip: text;
