@@ -212,6 +212,13 @@ video {
     -webkit-text-fill-color: transparent;
     text-transform: capitalize;
 }
+.products-main-title{
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: capitalize;
+}
 .product-btn{
     border: none;
     border-radius: 40px;
