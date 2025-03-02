@@ -245,7 +245,7 @@ textarea:focus{
 }
 
 .map-area{
-    background: url("/frontend/assets/full-map.png");
+    background: url("./assets/full-map.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
