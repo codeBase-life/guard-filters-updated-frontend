@@ -667,16 +667,9 @@
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         All Filters
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">All Make</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Models</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    <ul class="dropdown-menu" id="all-filter">
+                                        <!-- dynamic data -->
+
                                     </ul>
                                 </div>
                             </li>
@@ -684,18 +677,10 @@
                                 <div class="dropdown bg-light bg-gradient rounded-md-end rounded-md-start">
                                     <a class="btn filter-button dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        All Filters
+                                        All Model
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">All Make</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Models</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    <ul class="dropdown-menu" id="all-model">
+                                        <!-- dynamic data -->
                                     </ul>
                                 </div>
                             </li>
@@ -703,18 +688,10 @@
                                 <div class="dropdown bg-light bg-gradient rounded-md-end rounded-md-start ">
                                     <a class="btn filter-button dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        All Filters
+                                        All Make
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">All Make</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Models</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    <ul class="dropdown-menu" id="all-make">
+                                        <!-- dynamic data -->
                                     </ul>
                                 </div>
                             </li>
@@ -722,18 +699,10 @@
                                 <div class="dropdown bg-light bg-gradient rounded-end  ">
                                     <a class="btn filter-button dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        All Filters
+                                        All Year
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">All Make</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Models</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">All Year</a></li>
+                                    <ul class="dropdown-menu" id="all-year">
+                                        <!-- dynamic data -->
                                     </ul>
                                 </div>
                             </li>
@@ -742,22 +711,25 @@
                 </ul>
             </div>
             <div class="container">
-                <div class="row row-cols-2 row-cols-md-3 g-3">
-                    <div class="col d-flex flex-column justify-content-between">
+                <div class="row row-cols-2 row-cols-md-3 g-3" id="products">
+                    <!-- <div class="col d-flex flex-column justify-content-between">
                         <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
                             style="height: 100%;">
                             <img class="img-fluid" src="./assets/daihatsu charade.png" alt="">
                         </div>
                         <ul
-                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between align-items-center">
                             <li>
                                 <b class="text-black product-title">daihatsu charade</b>
                             </li>
-                            <li><button type="button" class="product-btn">view</button>
+                            <li>
+                                <a href="" role="button" class="product-btn text-decoration-none">view</a>
+                                
                             </li>
                         </ul>
-                    </div>
-                    <div class="col d-flex flex-column justify-content-between">
+                    </div> -->
+
+                    <!-- <div class="col d-flex flex-column justify-content-between">
                         <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
                             style="height: 100%;">
 
@@ -766,15 +738,16 @@
 
                         </div>
                         <ul
-                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between align-items-center">
                             <li>
                                 <b class="text-black product-title">suzuki bolan</b>
                             </li>
                             <li><button type="button" class="product-btn">view</button>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col d-flex flex-column justify-content-between">
+                    </div> -->
+
+                    <!-- <div class="col d-flex flex-column justify-content-between">
                         <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
                             style="height: 100%;">
 
@@ -783,15 +756,17 @@
 
                         </div>
                         <ul
-                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between align-items-center">
                             <li>
                                 <b class="text-black product-title">honda civic exi</b>
                             </li>
                             <li><button type="button" class="product-btn">view</button>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col d-flex flex-column justify-content-between">
+                    </div> -->
+
+
+                    <!-- <div class="col d-flex flex-column justify-content-between">
                         <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
                             style="height: 100%;">
 
@@ -800,15 +775,16 @@
 
                         </div>
                         <ul
-                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between">
+                            class="list-unstyled bg-white rounded-bottom px-3 py-3 d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between align-items-md-center align-items-start">
                             <li>
                                 <b class="text-black product-title">fiat 480, 640 tractor</b>
                             </li>
                             <li><button type="button" class="product-btn">view</button>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col d-flex flex-column justify-content-between">
+                    </div> -->
+
+                    <!-- <div class="col d-flex flex-column justify-content-between">
                         <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
                             style="height: 100%;">
 
@@ -824,8 +800,9 @@
                             <li><button type="button" class="product-btn">view</button>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col d-flex flex-column justify-content-between">
+                    </div> -->
+
+                    <!-- <div class="col d-flex flex-column justify-content-between">
                         <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
                             style="height: 100%;">
 
@@ -841,8 +818,9 @@
                             <li><button type="button" class="product-btn">view</button>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col d-flex flex-column justify-content-between">
+                    </div> -->
+
+                    <!-- <div class="col d-flex flex-column justify-content-between">
                         <div class="rounded bg-white text-center d-flex align-items-center justify-content-center"
                             style="height: 100%;">
 
@@ -892,7 +870,7 @@
                             <li><button type="button" class="product-btn">view</button>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

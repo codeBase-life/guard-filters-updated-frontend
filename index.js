@@ -156,3 +156,138 @@ const sm_displayResults = (products) => {
     searchResults.style.display = "none";
   }
 };
+
+// filter values
+
+const all_filter = document.getElementById("all-filter");
+const all_model = document.getElementById("all-model");
+const all_make = document.getElementById("all-make");
+const all_year = document.getElementById("all-year");
+
+const filter_values = async () => {
+  try {
+    const response = await fetch(
+      "http://localhost:3000/api/products/filter_values"
+    );
+    const filters = await response.json();
+    return filters;
+  } catch (error) {
+    console.error("error fetching filter values ", error);
+  }
+};
+
+const getFilterValues = async () => {
+  const filters = await filter_values();
+  return {
+    make: filters.make,
+    model: filters.model,
+    year: filters.year,
+    filter: filters.type,
+  };
+};
+
+const display_filters = async () => {
+  const { make, model, year, filter } = await getFilterValues();
+
+  all_make.innerHTML = "";
+  all_model.innerHTML = "";
+  all_filter.innerHTML = "";
+  all_year.innerHTML = "";
+
+  const check_make = new Set();
+  const check_year = new Set();
+  const check_model = new Set();
+  const check_filter = new Set();
+
+  make.forEach((item) => {
+    if (!check_make.has(item)) {
+      const make_li = document.createElement("li");
+      make_li.innerHTML = `<a class="dropdown-item" href="" data-filter="make" data-value="${item}">${item}</a>`;
+
+      check_make.add(item);
+      all_make.appendChild(make_li);
+    }
+  });
+
+  model.forEach((item) => {
+    if (!check_model.has(item)) {
+      const make_li = document.createElement("li");
+      make_li.innerHTML = `<a class="dropdown-item" href="" data-filter="model" data-value="${item}">${item}</a>`;
+      check_model.add(item);
+      all_model.appendChild(make_li);
+    }
+  });
+  year.forEach((item) => {
+    if (!check_year.has(item)) {
+      const make_li = document.createElement("li");
+      make_li.innerHTML = `<a class="dropdown-item" href="" data-filter="year" data-value="${item}">${item}</a>`;
+      check_year.add(item);
+      all_year.appendChild(make_li);
+    }
+  });
+
+  filter.forEach((item) => {
+    if (!check_filter.has(item)) {
+      const li = document.createElement("li");
+      li.innerHTML = `<a class="dropdown-item" href="" data-filter="type" data-value="${item}">${item}</a>`;
+      check_filter.add(item);
+      all_filter.appendChild(li);
+    }
+  });
+
+  document.querySelectorAll(".dropdown-item").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const filter_type = link.getAttribute("data-filter");
+      const filter_value = link.getAttribute("data-value");
+      const query = `?${filter_type}=${filter_value}`;
+
+      filter_applied(query);
+    });
+  });
+};
+display_filters();
+
+const filter_applied = async (query) => {
+  try {
+    const value = await fetch(
+      `http://localhost:3000/api/products${query ? query : ""}`
+    );
+    const data = await value.json();
+    console.log(data.filter_applied);
+
+    dynamic_products(data.filter_applied);
+  } catch (error) {
+    console.error("error fetching products after filter applied", error);
+  }
+};
+filter_applied();
+
+const dynamic_products = (data) => {
+  const products = document.getElementById("products");
+  products.innerHTML = "";
+  data.forEach((item) => {
+    const first_div = document.createElement("div");
+    first_div.className = "col d-flex flex-column justify-content-between";
+    const first_inner_div = document.createElement("div");
+    first_inner_div.className =
+      "rounded bg-white text-center d-flex align-items-center justify-content-center";
+    first_inner_div.style = "height:100%";
+    first_inner_div.innerHTML = `<img class="img-fluid" src="${item.image}" alt="">`;
+
+    const first_inner_ul = document.createElement("ul");
+    first_inner_ul.className =
+      "list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between align-items-center";
+    const inner_ul_li = document.createElement("li");
+    inner_ul_li.innerHTML = `<b class="text-black product-title">${item.title}</b>`;
+
+    first_inner_ul.appendChild(inner_ul_li);
+
+    const inner_ul_li_2 = document.createElement("li");
+    inner_ul_li_2.innerHTML = `<a href="./product.html?id=${item.id}" role="button" class="product-btn text-decoration-none">view</a>`;
+    first_inner_ul.appendChild(inner_ul_li_2);
+    first_div.appendChild(first_inner_div);
+    first_div.appendChild(first_inner_ul);
+    products.appendChild(first_div);
+  });
+};

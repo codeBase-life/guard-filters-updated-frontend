@@ -428,7 +428,7 @@ right: 0%;
     text-transform: capitalize;
 }
 
-.product-btn{
+/* .product-btn{
     border: none;
     border-radius: 40px;
     padding: 5px 20px;
@@ -439,6 +439,19 @@ right: 0%;
 .product-btn:hover {
     transform: translateY(-10%);
     transition: transform 0.3s ease-in-out;
+} */
+.product-btn{
+    border: none;
+    border-radius: 40px;
+    padding: 5px 20px;
+    background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
+    color: white;
+}
+.product-btn:hover {
+    background: white;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
 }
 .products-btn-more-products{
 
