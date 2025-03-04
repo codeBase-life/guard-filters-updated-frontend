@@ -34,7 +34,6 @@ const md_searchResults = document.getElementById("md-search-results");
 
 md_searchBox.addEventListener("input", () => {
   const query = md_searchBox.value.toLowerCase();
-  console.log(query);
 
   get_data(query ? query : " ");
 });
@@ -170,6 +169,8 @@ const filter_values = async () => {
       "http://localhost:3000/api/products/filter_values"
     );
     const filters = await response.json();
+    topFilter(filters.type);
+
     return filters;
   } catch (error) {
     console.error("error fetching filter values ", error);
@@ -290,3 +291,26 @@ const dynamic_products = (data) => {
     products.appendChild(first_div);
   });
 };
+
+const topFilter = (value) => {
+  const filter = document.getElementById("filterSelect");
+  const check_value = new Set();
+  value.forEach((item) => {
+    if (!check_value.has(item)) {
+      const val = document.createElement("option");
+      val.className = "topFilter";
+      val.innerText = item;
+      val.value = item;
+
+      check_value.add(item);
+      filter.append(val);
+    }
+  });
+
+  document.querySelectorAll(".topFilter").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+  });
+};
+// topFilter();
