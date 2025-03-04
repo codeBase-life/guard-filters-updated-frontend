@@ -254,7 +254,6 @@ const filter_applied = async (query) => {
       `http://localhost:3000/api/products${query ? query : ""}`
     );
     const data = await value.json();
-    console.log(data.filter_applied);
 
     dynamic_products(data.filter_applied);
   } catch (error) {
