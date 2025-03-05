@@ -217,22 +217,46 @@ video {
     -webkit-text-fill-color: transparent;
   }
 
-  .swiper-slide {
-    width: 300px !important; /* Adjust as needed */
-  }
-  @media (max-width: 640px) {
-    .swiper-slide {
-      width: 300px !important; /* or a width that suits your design */
-    }
-  }
-  @media(max-width:600px){
-    .swiper-img{
-        width: 230x;
-    }
-  }
-  /* .swiper-wrapper{
-    transform: translate3d(0px, 0px, 0px) !important;
-  } */
+/* products area 3 products */
+
+/* .product-slider{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+} */
+
+.product{
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease
+}
+.product img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.inactive{
+  filter: blur(4px);
+  pointer-events: none;
+}
+.active{
+  filter: none;
+  width: 300px;
+  cursor: pointer;
+  
+}
+.active:hover{
+  transform: scale(1.4);
+  z-index: 1;
+  
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+  
 .position-two-icons{
     transform: translateX(400px);
 }

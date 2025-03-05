@@ -1,25 +1,3 @@
-var swiper = new Swiper(".swiper", {
-  effect: "coverflow", // Enable coverflow effect
-  // grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-
-  allowTouchMove: false,
-  loop: true,
-  coverflowEffect: {
-    rotate: 0, // Slide rotate in degrees
-    stretch: 0, // Stretch space between slides (in px)
-    depth: 100, // Depth offset in px (slides translate in Z axis)
-    modifier: 6, // Effect multiplier (change from 0 to 1)
-    slideShadows: true, // Enables slide shadows
-  },
-
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -175,22 +153,22 @@ const productsPagination = (first, second) => {
 // product inside slider
 
 const productSlider = (product, first, second) => {
-  let slider = document.getElementById("swiper-wrapper");
+  let slider = document.getElementById("productSlider");
 
   // First slide
   const box = document.createElement("div");
-  box.className = "swiper-slide";
+  box.className = "product inactive bg-white";
   const img = document.createElement("img");
-  img.className = "swiper-img";
+  img.className = "img-fluid";
   img.src = second.image;
   box.appendChild(img);
   slider.appendChild(box);
 
   // Second slide
   const box1 = document.createElement("div");
-  box1.className = "swiper-slide"; // Use box1 here
+  box1.className = "product active bg-white"; // Use box1 here
   const img1 = document.createElement("img");
-  img1.className = "swiper-img";
+  img1.className = "img-fluid ";
   img1.src = product.image;
   box1.appendChild(img1); // Append to box1
   slider.appendChild(box1);
@@ -198,9 +176,9 @@ const productSlider = (product, first, second) => {
   // third slide
 
   const box2 = document.createElement("div");
-  box2.className = "swiper-slide"; // Use box1 here
+  box2.className = "product inactive bg-white"; // Use box1 here
   const img2 = document.createElement("img");
-  img2.className = "swiper-img";
+  img2.className = "img-fluid";
   img2.src = first.image;
   box2.appendChild(img2); // Append to box1
   slider.appendChild(box2);
