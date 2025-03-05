@@ -157,7 +157,7 @@ const productSlider = (product, first, second) => {
 
   // First slide
   const box = document.createElement("div");
-  box.className = "product inactive bg-white";
+  box.className = "product inactive1 bg-white";
   const img = document.createElement("img");
   img.className = "img-fluid";
   img.src = second.image;
@@ -166,7 +166,7 @@ const productSlider = (product, first, second) => {
 
   // Second slide
   const box1 = document.createElement("div");
-  box1.className = "product active bg-white"; // Use box1 here
+  box1.className = "product active1 bg-white"; // Use box1 here
   const img1 = document.createElement("img");
   img1.className = "img-fluid ";
   img1.src = product.image;
@@ -176,7 +176,7 @@ const productSlider = (product, first, second) => {
   // third slide
 
   const box2 = document.createElement("div");
-  box2.className = "product inactive bg-white"; // Use box1 here
+  box2.className = "product inactive1 bg-white"; // Use box1 here
   const img2 = document.createElement("img");
   img2.className = "img-fluid";
   img2.src = first.image;

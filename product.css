@@ -239,17 +239,17 @@ video {
   object-fit: contain;
   display: block;
 }
-.inactive{
+.inactive1{
   filter: blur(4px);
   pointer-events: none;
 }
-.active{
+.active1{
   filter: none;
   width: 300px;
   cursor: pointer;
   
 }
-.active:hover{
+.active1:hover{
   transform: scale(1.4);
   z-index: 1;
   
