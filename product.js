@@ -11,6 +11,99 @@ function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
+
+// recently viewed products
+const forRecentlyViewed = (product) => {
+  const max_products = 4;
+  const expire_time = 1000 * 60 * 60;
+
+  // save recently viewed in local storage
+  const save_local = (products) => {
+    localStorage.setItem("recentlyViewed", JSON.stringify(products));
+  };
+
+  const get_local = () => {
+    const item = localStorage.getItem("recentlyViewed");
+    if (item) {
+      try {
+        return JSON.parse(item);
+      } catch (error) {
+        console.error("Error parsing local storage data", error);
+        return [];
+      }
+    }
+    return [];
+  };
+
+  let recentlyViewed = get_local();
+  if (!Array.isArray(recentlyViewed)) {
+    recentlyViewed = [];
+  }
+
+  // disply products in the client side
+  const recentBox = document.getElementById("recentlyViewed");
+
+  recentlyViewed.forEach((el) => {
+    const div_col = document.createElement("div");
+    div_col.className = "col";
+    const first_div = document.createElement("div");
+    first_div.className = "h-100";
+    const second_div = document.createElement("div");
+    second_div.className = "bg-white rounded p-3 product-image-container";
+    const second_div_img = document.createElement("img");
+    second_div_img.className = "img-fluid product-img ";
+    second_div_img.src = el.image;
+    // second_div.innerHTML = `img class="img-fluid product-img" src="${el.image}"  alt="no">`;
+    second_div.appendChild(second_div_img);
+    const item_ul = document.createElement("ul");
+    item_ul.className = "list unstyled d-flex flex-column gap-3";
+    const first_para = document.createElement("p");
+    first_para.className = "fw-semibold text-dark products-title";
+    first_para.innerText = el.title;
+    const sec_para = document.createElement("p");
+    sec_para.className = "fw-semibold text-dark";
+    sec_para.innerHTML = `Brand: <span class="text-danger fw-light">${el.filter_type}</span>`;
+    const link = document.createElement("a");
+    link.role = "button";
+    link.href = `./product.html?id=${el.id}`;
+    link.className =
+      "similar-products-btn rounded-pill text-center text-decoration-none py-2";
+    link.innerText = "View Product";
+    item_ul.appendChild(first_para);
+    item_ul.appendChild(sec_para);
+    item_ul.appendChild(link);
+    first_div.appendChild(second_div);
+    first_div.appendChild(item_ul);
+    div_col.appendChild(first_div);
+    recentBox.appendChild(div_col);
+  });
+
+  // add products
+  const add_products = (product) => {
+    let current_time = Date.now();
+
+    // remove expired products
+    recentlyViewed = recentlyViewed.filter(
+      (item) => current_time - item.timestamp < expire_time
+    );
+
+    // to avoid duplication
+    const index = recentlyViewed.findIndex((item) => item.id === product.id);
+    if (index !== -1) {
+      // Update timestamp to extend the expiration
+      recentlyViewed[index].timestamp = current_time;
+    } else {
+      if (recentlyViewed.length >= max_products) {
+        recentlyViewed.shift();
+      }
+      recentlyViewed.push({ ...product, timestamp: current_time });
+    }
+    save_local(recentlyViewed);
+  };
+
+  add_products(product);
+};
+
 async function fetchProductDetails(productId) {
   try {
     const response = await fetch(
@@ -23,6 +116,7 @@ async function fetchProductDetails(productId) {
     const middleSecond = product.middleProductSecond;
 
     const ActualProduct = product.actualProduct;
+    forRecentlyViewed(ActualProduct);
     dynamicTitleSection(ActualProduct.title, ActualProduct.filter_type);
     onlyTitle(ActualProduct.title);
     displayTopProducts(firstTopProduct, secondTopProduct);
