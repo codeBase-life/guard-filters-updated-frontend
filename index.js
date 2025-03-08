@@ -264,9 +264,11 @@ const filter_applied = async (query) => {
 filter_applied();
 
 const dynamic_products = (data) => {
+  let short = data.slice(0, 6);
+
   const products = document.getElementById("products");
   products.innerHTML = "";
-  data.forEach((item) => {
+  short.forEach((item) => {
     const first_div = document.createElement("div");
     first_div.className = "col d-flex flex-column justify-content-between";
     const first_inner_div = document.createElement("div");
