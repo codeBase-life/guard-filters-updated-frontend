@@ -84,29 +84,29 @@ const forRecentlyViewed = (product) => {
   });
 
   // add products
-  const add_products = (product) => {
-    let current_time = Date.now();
+  // const add_products = (product) => {
+  //   let current_time = Date.now();
 
-    // remove expired products
-    recentlyViewed = recentlyViewed.filter(
-      (item) => current_time - item.timestamp < expire_time
-    );
+  //   // remove expired products
+  //   recentlyViewed = recentlyViewed.filter(
+  //     (item) => current_time - item.timestamp < expire_time
+  //   );
 
-    // to avoid duplication
-    const index = recentlyViewed.findIndex((item) => item.id === product.id);
-    if (index !== -1) {
-      // Update timestamp to extend the expiration
-      recentlyViewed[index].timestamp = current_time;
-    } else {
-      if (recentlyViewed.length >= max_products) {
-        recentlyViewed.shift();
-      }
-      recentlyViewed.push({ ...product, timestamp: current_time });
-    }
-    save_local(recentlyViewed);
-  };
+  //   // to avoid duplication
+  //   const index = recentlyViewed.findIndex((item) => item.id === product.id);
+  //   if (index !== -1) {
+  //     // Update timestamp to extend the expiration
+  //     recentlyViewed[index].timestamp = current_time;
+  //   } else {
+  //     if (recentlyViewed.length >= max_products) {
+  //       recentlyViewed.shift();
+  //     }
+  //     recentlyViewed.push({ ...product, timestamp: current_time });
+  //   }
+  //   save_local(recentlyViewed);
+  // };
 
-  add_products(product);
+  // add_products(product);
 };
 
 async function fetchProductDetails(productId) {

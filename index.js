@@ -280,7 +280,7 @@ const dynamic_products = (data) => {
 
     const first_inner_ul = document.createElement("ul");
     first_inner_ul.className =
-      "list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between align-items-center";
+      "list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-between align-items-md-center align-items-start";
     const inner_ul_li = document.createElement("li");
     inner_ul_li.innerHTML = `<b class="text-black product-title">${item.title}</b>`;
 
