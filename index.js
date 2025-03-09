@@ -163,11 +163,14 @@ const all_model = document.getElementById("all-model");
 const all_make = document.getElementById("all-make");
 const all_year = document.getElementById("all-year");
 
+const apiUrl =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://guard-filters-updated-frontend.vercel.app";
+
 const filter_values = async () => {
   try {
-    const response = await fetch(
-      "http://localhost:3000/api/products/filter_values"
-    );
+    const response = await fetch(`${apiUrl}/api/products/filter_values`);
     const filters = await response.json();
     topFilter(filters.type);
 
