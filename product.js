@@ -1,3 +1,8 @@
+const apiUrl =
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://guard-filters-updated-backend.vercel.app";
+
 document.addEventListener("DOMContentLoaded", function () {
   var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -106,9 +111,7 @@ const forRecentlyViewed = (product) => {
 
 async function fetchProductDetails(productId) {
   try {
-    const response = await fetch(
-      `http://localhost:3000/api/product/${productId}`
-    );
+    const response = await fetch(`${apiUrl}/api/product/${productId}`);
     const product = await response.json();
     const firstTopProduct = product.topProductFirst;
     const secondTopProduct = product.topProductSecond;
@@ -391,7 +394,7 @@ if (productId) {
 
 const get_data = async (search) => {
   try {
-    const response = await fetch(`http://localhost:3000/products/${search}`);
+    const response = await fetch(`${apiUrl}/products/${search}`);
     const products = await response.json();
     displayResults(products);
   } catch (error) {
@@ -462,7 +465,7 @@ const displayResults = (products) => {
 
 const sm_get_data = async (search) => {
   try {
-    const response = await fetch(`http://localhost:3000/products/${search}`);
+    const response = await fetch(`${apiUrl}/products/${search}`);
     const products = await response.json();
     sm_displayResults(products);
   } catch (error) {
