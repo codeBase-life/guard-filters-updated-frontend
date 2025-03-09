@@ -13,6 +13,11 @@ var splide = new Splide(".splide", {
 
 splide.mount();
 
+const apiUrl =
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://guard-filters-updated-backend.vercel.app";
+
 // select js
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("filterSelect").value = "";
@@ -20,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const get_data = async (search) => {
   try {
-    const response = await fetch(`http://localhost:3000/products/${search}`);
+    const response = await fetch(`${apiUrl}/products/${search}`);
     const products = await response.json();
     displayResults(products);
   } catch (error) {
@@ -90,7 +95,7 @@ const displayResults = (products) => {
 
 const sm_get_data = async (search) => {
   try {
-    const response = await fetch(`http://localhost:3000/products/${search}`);
+    const response = await fetch(`${apiUrl}/products/${search}`);
     const products = await response.json();
     sm_displayResults(products);
   } catch (error) {
@@ -162,12 +167,6 @@ const all_filter = document.getElementById("all-filter");
 const all_model = document.getElementById("all-model");
 const all_make = document.getElementById("all-make");
 const all_year = document.getElementById("all-year");
-
-const apiUrl =
-  window.location.hostname === "127.0.0.1"
-    ? "http://localhost:3000"
-    : "https://guard-filters-updated-backend.vercel.app";
-console.log(apiUrl);
 
 const filter_values = async () => {
   try {
@@ -255,9 +254,7 @@ display_filters();
 
 const filter_applied = async (query) => {
   try {
-    const value = await fetch(
-      `http://localhost:3000/api/products${query ? query : ""}`
-    );
+    const value = await fetch(`${apiUrl}/api/products${query ? query : ""}`);
     const data = await value.json();
 
     dynamic_products(data.filter_applied);
