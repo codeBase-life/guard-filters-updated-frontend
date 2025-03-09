@@ -166,7 +166,7 @@ const all_year = document.getElementById("all-year");
 const apiUrl =
   window.location.hostname === "127.0.0.1"
     ? "http://localhost:3000"
-    : "https://guard-filters-updated-frontend.vercel.app";
+    : "https://guard-filters-updated-backend.vercel.app";
 console.log(apiUrl);
 
 const filter_values = async () => {
