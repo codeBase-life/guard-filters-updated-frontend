@@ -1,12 +1,17 @@
+const apiUrl =
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://guard-filters-updated-backend.vercel.app";
+
 // helper function to update query parameter
+
 function updateQueryParameter(query, key, value) {
   const urlParams = new URLSearchParams(query);
   urlParams.set(key, value);
   return "?" + urlParams.toString();
 }
 function fetchAndDisplayProducts(query = "") {
-  // https://guard-filters-updated-frontend.vercel.app/
-  fetch(`http://localhost:3000/api/products${query}`)
+  fetch(`${apiUrl}/api/products${query}`)
     .then((data) => data.json())
     .then((products) => {
       const product = products.Products;
@@ -111,9 +116,7 @@ fetchAndDisplayProducts("?page=1");
 
 async function fetchFilterValues() {
   try {
-    const response = await fetch(
-      "http://localhost:3000/api/products/filter_values"
-    );
+    const response = await fetch(`${apiUrl}/api/products/filter_values`);
     const filterValues = await response.json();
     return filterValues;
   } catch (error) {
@@ -205,7 +208,7 @@ fetchFilterValues().then((values) => {
 
 const get_data = async (search) => {
   try {
-    const response = await fetch(`http://localhost:3000/products/${search}`);
+    const response = await fetch(`${apiUrl}/products/${search}`);
     const products = await response.json();
     displayResults(products);
   } catch (error) {
@@ -274,7 +277,7 @@ const displayResults = (products) => {
 
 const sm_get_data = async (search) => {
   try {
-    const response = await fetch(`http://localhost:3000/products/${search}`);
+    const response = await fetch(`${apiUrl}/products/${search}`);
     const products = await response.json();
     sm_displayResults(products);
   } catch (error) {
