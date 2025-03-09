@@ -166,7 +166,7 @@ const all_year = document.getElementById("all-year");
 const filter_values = async () => {
   try {
     const response = await fetch(
-      "https://guard-filters-updated-frontend.vercel.app/api/products/filter_values"
+      "http://localhost:3000/api/products/filter_values"
     );
     const filters = await response.json();
     topFilter(filters.type);
