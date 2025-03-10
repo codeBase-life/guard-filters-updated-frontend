@@ -360,7 +360,7 @@ right: 0%;
 }
 
 
-/* brands */
+/* trusted-brands */
 
 .brands-heading{
     background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
@@ -386,6 +386,10 @@ right: 0%;
 .brandes-inner-btn-txt2{
     color: #EE1C25;
 }
+.super-gac-link, .allied-link{
+    width: fit-content;
+}
+
 
 
 /* choose us  */
