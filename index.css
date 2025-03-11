@@ -462,13 +462,13 @@ button{
 }
 
 .about-us-para1{
-    padding: 5px 30px ;
+    padding: 20px ;
     background-color: white;
     border-radius: 5px;
     width: 80%;
 }
 .about-us-para2{
-    padding: 5px 30px ;
+    padding: 20px ;
     background-color: white;
    
     width: 80%;
@@ -559,7 +559,7 @@ right: 0%;
 
 
 
-/* choose us  */
+/* why choose us  */
 .choose-us-list1{
     background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
 }
@@ -573,6 +573,11 @@ right: 0%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: capitalize;
+}
+@media(max-width:576px){
+    .choose-us-para{
+        font-size: 10px;
+    }
 }
 
 /* products */
