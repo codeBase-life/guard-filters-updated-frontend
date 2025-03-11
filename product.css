@@ -462,7 +462,11 @@ video {
   .bg-colorfull{
     background: linear-gradient(180deg, #27247D 0%, #4741E3 100%);
   }
-
+@media(max-width:400px){
+  .meta-text-responsive{
+    font-size: x-small;
+  }
+}
 
 
   /* similar products */
