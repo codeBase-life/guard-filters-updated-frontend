@@ -464,7 +464,7 @@ video {
   }
 @media(max-width:400px){
   .meta-text-responsive{
-    font-size: x-small;
+    font-size: 11px;
   }
 }
 
