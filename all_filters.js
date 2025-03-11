@@ -35,7 +35,7 @@ function fetchAndDisplayProducts(query = "") {
 
         const inner_ul = document.createElement("ul");
         inner_ul.className =
-          "list-unstyled bg-white rounded-bottom px-3 py-3  d-flex flex-column flex-md-row gap-2 gap-md-0 justify-content-md-between align-items-md-end justify-content-start";
+          "list-unstyled bg-white rounded-bottom px-3 py-3  d-flex  flex-row  justify-content-between align-items-end ";
         const ul_first_li = document.createElement("li");
         ul_first_li.innerHTML = `
                <b class="text-black product-title">${item.title}</b>
