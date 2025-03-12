@@ -23,20 +23,20 @@ function fetchAndDisplayProducts(query = "") {
 
       product.forEach((item) => {
         const first_inner_div = document.createElement("div");
-        first_inner_div.className =
-          "col d-flex flex-column justify-content-between";
+        first_inner_div.className = "col d-flex flex-column ";
 
         const second_inner_div = document.createElement("div");
         second_inner_div.className =
-          "rounded bg-white text-center d-flex align-items-center justify-content-center ";
+          "rounded bg-white text-center d-flex align-items-center justify-content-center product-image-container";
         second_inner_div.style = "height:100%";
 
-        second_inner_div.innerHTML = `  <img class="img-fluid" src="${item.image}" alt="">`;
+        second_inner_div.innerHTML = `  <img class="img-fluid product-img" src="${item.image}" alt="">`;
 
         const inner_ul = document.createElement("ul");
         inner_ul.className =
-          "list-unstyled bg-white rounded-bottom px-3 py-3  d-flex  flex-row  justify-content-between align-items-end ";
+          "list-unstyled bg-white rounded-bottom px-3 py-3  d-flex  flex-row  justify-content-between align-items-end mt-auto";
         const ul_first_li = document.createElement("li");
+        // ul_first_li.className = "pt-5";
         ul_first_li.innerHTML = `
                <b class="text-black product-title">${item.title}</b>
               `;
