@@ -444,6 +444,30 @@ textarea:focus{
     
    height: 100%;
 }
+/* @media (min-width: 576px) and (max-width: 768px) {
+    .map-area {
+        height: 1100px !important;
+    }
+} */
+
+
+ /* modern approach */
+@media (width >= 576px) and (width <= 768px) {
+    .map-area {
+        height: 1100px !important;
+    }
+}
+
+@media (width >= 300px) and (width <= 400px){
+    .map-area{
+        height: 750px !important;
+    }
+}
+@media (width >=400px) and (width <= 576px){
+    .map-area{
+        height: 1000px;
+    }
+}
 
 
 /* footer */
