@@ -97,8 +97,9 @@ video {
  /* navBar */
  .logo {
   width: 70px;
-  /* from cursor */
-  height: auto;    
+ 
+  height: 50px;  
+  object-fit: contain;  
 }
 
 .home-link,
